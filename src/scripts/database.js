@@ -9,7 +9,7 @@ class Database {
     }
     async get() {
         const { data, error } = await this.supabase
-            .from(table)
+            .from(this.table)
             .select()
         
         return data

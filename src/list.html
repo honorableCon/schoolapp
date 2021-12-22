@@ -37,8 +37,18 @@
 <div class="container">
     <h1 class="text-center py-4">School App</h1>
     <div class="row gap-5">
-        <div id="listStudentContenair">
-            
+        <template id="studentCard">
+            <div class="studentCard d-flex gap-3 card p-4 m-3 rounded-3">
+                <img class="img-profil rounded-circle" src='https://placehold.it/50x50?text=profil' alt='profil' />
+                <div class="">
+                    <h3 class="text-name fs-5">{{ firstname }} {{ lastname }}</h3>
+                    <h4 class="text-level fs-6 text-danger">{{level}}</h4>
+                    <p class="text-bio">{{ bio }}</p>
+                </div>
+            </div>
+        </template>
+        <div id="listStudentContenair" class="d-flex justify-content-center">
+
         </div>
     </div>
 </div>
