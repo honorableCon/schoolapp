@@ -6,13 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="../dist/style.css">
+    <script src="https://kit.fontawesome.com/ea05a76d15.js" crossorigin="anonymous"></script>
     <title>School APP</title>
 </head>
 <body>
 <header class="mb-4">
 <nav class="navbar navbar-expand-lg navbar-light bg-light py-4">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">School App</a>
+        <a class="navbar-brand" href="index.html">School App</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
             aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -23,7 +24,7 @@
                     <a class="nav-link active" aria-current="page" href="list.html">Liste Etudiants</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Ajouter</a>
+                    <a class="nav-link active" aria-current="page" href="index.html">Ajouter</a>
                 </li>
             </ul>
             <form class="d-flex">
@@ -38,7 +39,7 @@
     <h1 class="text-center py-4">School App</h1>
     <div class="row gap-5">
         <!--============================== formulaire ==============================-->
-        <div class="col">
+        <div class="col-12 col-md-6">
             <form id='addForm'>
                 <div class="mb-3">
                     <input placeholder="Nom" type="text" class="form-control" id="input-lastName" required>
@@ -48,17 +49,23 @@
                 </div>
                 <div class="mb-3">
                     <select class="form-select" id="level-select" aria-label="Niveau">
-                        <option selected>Niveau</option>
-                        <option value="1">Bien</option>
+                        <option selected value="1">Bien</option>
                         <option value="2">Moyen</option>
                         <option value="3">Tres Bien</option>
                     </select>
                 </div>
                 <div class="mb-3">
+                    <label for="frontendLevel" class="form-label">Frontend</label>
+                    <input type="range" class="form-range" id="frontendLevel" min="0" max="100">
+                </div>
+                <div class="mb-3">
+                    <label for="backendLevel" class="form-label">Backend</label>
+                    <input type="range" class="form-range" id="backendLevel" min="0" max="100">
+                </div>
+                <div class="mb-3">
                     <label for="bioTextArea" class="form-label">Bio</label>
                     <textarea class="form-control" id="bioTextArea" rows="5" required></textarea>
                 </div>
-
                 <button type="submit" class="btn btn-primary">Ajouter</button>
             </form>
         </div>
@@ -68,11 +75,14 @@
             <h2>Apprenants</h2>
             <template id="studentCard">
                 <div class="studentCard d-flex gap-3">
-                    <img class="img-profil rounded-circle" src='https://placehold.it/50x50?text=profil' alt='profil' />
-                    <div class="">
-                        <h3 class="text-name fs-5">{{ firstname }} {{ lastname }}</h3>
-                        <h4 class="text-level fs-6 text-danger">{{level}}</h4>
-                        <p class="text-bio">{{ bio }}</p>
+                    <div class="d-flex justify-content-between">
+                        <img class="img-profil rounded-circle" src='https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png' alt='profil' />
+                        <div class="mx-3">
+                            <h3 class="text-name fs-5">{{ firstname }} {{ lastname }}</h3>
+                            <h4 class="text-level fs-6 text-danger">{{level}}</h4>
+                            <p class="text-bio">{{ bio }}</p>
+                        </div>
+                        <a href="list.html" class="editButton"><i class="far fa-edit"></i></a>
                     </div>
                 </div>
             </template>

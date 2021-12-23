@@ -3,8 +3,14 @@ function getFields() {
     let lastname = document.querySelector("#input-lastName").value;
     let bio = document.querySelector("#bioTextArea").value;
     let level = document.querySelector("#level-select").selectedOptions[0].text;
+    let frontendLevel = document.querySelector('#frontendLevel').value;
+    let backendLevel = document.querySelector('#backendLevel').value;
+    let progress = {
+        frontend: parseInt(frontendLevel),
+        backend: parseInt(backendLevel)
+    }
 
-    return {firstname, lastname, bio, level};
+    return {firstname, lastname, bio, level, progress};
 }
 
 replaceMustachWithObjectValues = function(element, dataObject) {
