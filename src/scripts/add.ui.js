@@ -32,11 +32,11 @@ function addUi(studentsDatabase){
             let idCarte = carte.getAttribute('data-objectId')
             let textsToModify = editBtn.previousElementSibling
             let bio = textsToModify.lastElementChild
-            let level = bio.previousElementSibling
             let title = textsToModify.firstElementChild
             document.getElementById('input-lastName').focus();
-            document.getElementById('input-lastName').value = title.value;
-            document.getElementById('input-firstName').value = title.value;
+            document.getElementById('input-lastName').value = title.innerHTML;
+            document.getElementById('input-firstName').value = title.innerHTML;
+            document.getElementById('bioTextArea').value = bio.innerHTML;
             deleteElement(students, idCarte);
             carte.remove();
         })       
