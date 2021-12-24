@@ -33,9 +33,14 @@ function addUi(studentsDatabase){
             let textsToModify = editBtn.previousElementSibling
             let bio = textsToModify.lastElementChild
             let title = textsToModify.firstElementChild
+
+            document.getElementById('input-lastName').value = "";
+            document.getElementById('input-firstName').value = "";
+            document.getElementById('bioTextArea').value = "";
+
             document.getElementById('input-lastName').focus();
-            document.getElementById('input-lastName').value = title.innerHTML;
-            document.getElementById('input-firstName').value = title.innerHTML;
+            document.getElementById('input-lastName').value = title.innerHTML.split(' ')[0];
+            document.getElementById('input-firstName').value = title.innerHTML.split(' ')[1];
             document.getElementById('bioTextArea').value = bio.innerHTML;
             deleteElement(students, idCarte);
             carte.remove();
