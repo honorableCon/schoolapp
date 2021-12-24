@@ -30,30 +30,15 @@ function addUi(studentsDatabase){
         editBtn.addEventListener('click', e => {
             let carte = e.target.parentElement.parentElement.parentElement
             let idCarte = carte.getAttribute('data-objectId')
-            // deleteElement(students, idCarte);
-            // carte.remove();
             let textsToModify = editBtn.previousElementSibling
             let bio = textsToModify.lastElementChild
             let level = bio.previousElementSibling
             let title = textsToModify.firstElementChild
-
-            let inputTitle = document.createElement('input')
-            inputTitle.setAttribute('class', title.classList.value + " form-control mb-4")
-            inputTitle.value = title.innerHTML
-
-            let inputBio = document.querySelector('#bioTextArea').cloneNode(true)
-            inputBio.classList.add(bio.classList.value)
-            inputBio.value = bio.innerHTML
-
-            // let inputLevel = document.querySelector('.text-level').cloneNode(true)
-            // inputLevel.classList.add(level.classList.value)
-            // inputLevel.value = level.innerHTML
-
-            textsToModify.replaceChild(inputTitle, title);
-            textsToModify.replaceChild(inputBio, bio);
-            // textsToModify.replaceChild(inputLevel, level);
-            console.log(bio.innerHTML, level.innerHTML, title.innerHTML);
-
+            document.getElementById('input-lastName').focus();
+            document.getElementById('input-lastName').value = title.value;
+            document.getElementById('input-firstName').value = title.value;
+            deleteElement(students, idCarte);
+            carte.remove();
         })       
     })
     // VERIFICATION DES MOTS SAISIS
