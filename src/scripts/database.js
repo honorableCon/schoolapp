@@ -14,10 +14,10 @@ class Database {
         
         return data
     }
-    async add(documents){
+    async add(row){
         const { data, error } = await this.supabase
         .from(this.table)
-        .insert(documents)
+        .insert([row])
 
         return data
     }
