@@ -34,9 +34,7 @@ function addUi(studentsDatabase){
             let bio = textsToModify.lastElementChild
             let title = textsToModify.firstElementChild
 
-            document.getElementById('input-lastName').value = "";
-            document.getElementById('input-firstName').value = "";
-            document.getElementById('bioTextArea').value = "";
+            addForm.reset();
 
             document.getElementById('input-lastName').focus();
             document.getElementById('input-lastName').value = title.innerHTML.split(' ')[0];
